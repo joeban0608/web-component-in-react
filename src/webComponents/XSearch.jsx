@@ -29,7 +29,7 @@ class XSearch extends HTMLElement {
             className="bg-foreground text-primary"
           />
           <a href={url} target="_blank" rel="noopener noreferrer">
-            Search
+            Google Search
           </a>
         </div>
       );
