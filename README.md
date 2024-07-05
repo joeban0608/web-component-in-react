@@ -11,6 +11,8 @@ resoure:
     https://legacy.reactjs.org/docs/web-components.html
   6. react example:
     https://techblog.skeepers.io/create-a-web-component-from-a-react-component-bbe7c5f85ee6
+  7. vite-react deploy in githubpage:  
+    https://www.youtube.com/watch?v=Bk28snjHr7c
 ---
 # React + Vite
 
