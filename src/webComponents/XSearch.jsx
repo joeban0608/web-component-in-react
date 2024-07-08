@@ -1,6 +1,8 @@
 import { useState } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 class XSearch extends HTMLElement {
+  static observedAttributes = ["size"];
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -36,6 +38,9 @@ class XSearch extends HTMLElement {
     };
 
     root.render(<SearchComponent />);
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`属性 ${name} 已由 ${oldValue} 变更为 ${newValue}。`);
   }
 }
 
