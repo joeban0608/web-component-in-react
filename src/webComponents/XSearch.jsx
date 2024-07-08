@@ -1,8 +1,7 @@
 import { useState } from "react";
 import ReactDOM from "react-dom/client";
-class XSearch extends HTMLElement {
-  static observedAttributes = ["size"];
 
+class XSearch extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -10,10 +9,14 @@ class XSearch extends HTMLElement {
 
   connectedCallback() {
     const root = ReactDOM.createRoot(this.shadowRoot);
-
+    const size = this.getAttribute("size");
+    const imgSrc = this.getAttribute("imgSrc");
+    // root;
     const SearchComponent = () => {
+      console.log("size", size);
+      console.log("imgSrc", imgSrc);
+
       const [queryText, setQueryText] = useState("");
-      // const name = this.getAttribute("name");
 
       const handleOnChange = (e) => {
         setQueryText(e.target.value);
@@ -33,14 +36,18 @@ class XSearch extends HTMLElement {
           <a href={url} target="_blank" rel="noopener noreferrer">
             Google Search
           </a>
+          {imgSrc && (
+            <img
+              src={imgSrc}
+              alt="logo"
+              style={{ width: `${size}rem`, height: `${size}rem` }}
+            ></img>
+          )}
         </div>
       );
     };
 
     root.render(<SearchComponent />);
-  }
-  attributeChangedCallback(name, oldValue, newValue) {
-    console.log(`属性 ${name} 已由 ${oldValue} 变更为 ${newValue}。`);
   }
 }
 

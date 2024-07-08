@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <h1>Here is web component x-search</h1>
-        <x-search size="100"></x-search>
+        <x-search size="2" imgSrc="logo.png"></x-search>
         <hr></hr>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
